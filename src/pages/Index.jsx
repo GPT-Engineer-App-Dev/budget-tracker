@@ -1,15 +1,27 @@
-// Complete the Index page component here
-// Use chakra-ui
-import { Button } from "@chakra-ui/react"; // example
-import { FaPlus } from "react-icons/fa"; // example - use react-icons/fa for icons
+import { VStack, Box, Heading, Button } from "@chakra-ui/react";
+import { FaFileExport } from "react-icons/fa";
+import TransactionForm from "../components/TransactionForm";
+import TransactionList from "../components/TransactionList";
+import FilterSection from "../components/FilterSection";
 
 const Index = () => {
-  // TODO: Create the website here!
   return (
-    <Button>
-      Hello world! <FaPlus />
-    </Button>
-  ); // example
+    <VStack spacing={8}>
+      <Heading as="h1" size="xl">
+        Budgeting App
+      </Heading>
+      <TransactionForm />
+      <Box>
+        <Heading as="h2" size="md">
+          Total Balance: $0.00
+        </Heading>
+        {}
+      </Box>
+      <TransactionList />
+      <FilterSection />
+      <Button leftIcon={<FaFileExport />}>Export Transactions</Button>
+    </VStack>
+  );
 };
 
 export default Index;
